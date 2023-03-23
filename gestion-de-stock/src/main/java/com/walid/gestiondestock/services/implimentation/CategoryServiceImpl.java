@@ -85,7 +85,7 @@ public class CategoryServiceImpl implements CategoryService {
 //                        "Aucun Category avec le code = " + codeCategory + " n'est trouve dans la BDD",
 //                        ErrorCodes.CATEGORY_NOT_FOUND)
 
-        return categoryRepository.findCategoryByCodeCategory(codeCategory)
+        return categoryRepository.findCategoryByCode(codeCategory)
                 .map(CategoryDto::fromEntity)
                 .orElseThrow(()-> new EntityNotFoundException(
                         "Aucun Category avec le code = " + codeCategory + " n'est trouve dans la BDD",
